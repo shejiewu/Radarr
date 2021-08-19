@@ -6,10 +6,10 @@ import { fetchCustomFormatSpecifications } from 'Store/Actions/settingsActions';
 import createProviderSettingsSelector from 'Store/Selectors/createProviderSettingsSelector';
 import ExportCustomFormatModalContent from './ExportCustomFormatModalContent';
 
-const blacklistedProperties = ['id', 'implementationName', 'infoLink'];
+const blocklistedProperties = ['id', 'implementationName', 'infoLink'];
 
 function replacer(key, value) {
-  if (blacklistedProperties.includes(key)) {
+  if (blocklistedProperties.includes(key)) {
     return undefined;
   }
 
