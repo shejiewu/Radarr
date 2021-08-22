@@ -6,10 +6,10 @@ import { fetchCustomFormatSpecifications } from 'Store/Actions/settingsActions';
 import createProviderSettingsSelector from 'Store/Selectors/createProviderSettingsSelector';
 import ExportCustomFormatModalContent from './ExportCustomFormatModalContent';
 
-const blocklistedProperties = ['id', 'implementationName', 'infoLink'];
+const omittedProperties = ['id', 'implementationName', 'infoLink'];
 
 function replacer(key, value) {
-  if (blocklistedProperties.includes(key)) {
+  if (omittedProperties.includes(key)) {
     return undefined;
   }
 
